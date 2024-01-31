@@ -4,6 +4,7 @@
 - Complete following the UI design in Figma.
 - Allow the following features:
   + Add to cart.
+  + Sort list drinks
   + Add to favorites.
   + Select toppings, size, accompanying options.
   + Choose quantity
