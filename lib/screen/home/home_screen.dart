@@ -242,66 +242,71 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Stack(
-                            children: [
-                              SizedBox(
-                                height: 200,
-                                width: MediaQuery.sizeOf(context).width,
-                                child: Image.asset(
-                                  item.img,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Positioned(
-                                left: 16,
-                                top: 16,
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 6, vertical: 8),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(24)),
-                                  child: Text(
-                                    AppConvert.formatMoney(item.salePrice),
-                                    style: AppTextStyles.textStyle(
-                                        fontWeight: FontWeight.w600),
+                      Hero(
+                        tag: item.id,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Stack(
+                              children: [
+                                SizedBox(
+                                  height: 200,
+                                  width: MediaQuery.sizeOf(context).width,
+                                  child: Image.asset(
+                                    item.img,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
-                              ),
-                              Positioned(
-                                right: 16,
-                                top: 16,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    item.isFavorite.value =
-                                        !item.isFavorite.value;
-                                  },
-                                  child: ValueListenableBuilder<bool>(
-                                    valueListenable: item.isFavorite,
-                                    builder: (context, isFavorite, child) {
-                                      return Container(
-                                        width: 32,
-                                        height: 32,
-                                        decoration: const BoxDecoration(
-                                          color: Colors.white,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Icon(
-                                          isFavorite
-                                              ? Icons.favorite
-                                              : Icons.favorite_border_outlined,
-                                          size: 22,
-                                          color: AppColor.orange,
-                                        ),
-                                      );
+                                Positioned(
+                                  left: 16,
+                                  top: 16,
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 6, vertical: 8),
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(24)),
+                                    child: Text(
+                                      AppConvert.formatMoney(item.salePrice),
+                                      style: AppTextStyles.textStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 16,
+                                  top: 16,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      item.isFavorite.value =
+                                          !item.isFavorite.value;
                                     },
+                                    child: ValueListenableBuilder<bool>(
+                                      valueListenable: item.isFavorite,
+                                      builder: (context, isFavorite, child) {
+                                        return Container(
+                                          width: 32,
+                                          height: 32,
+                                          decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Icon(
+                                            isFavorite
+                                                ? Icons.favorite
+                                                : Icons
+                                                    .favorite_border_outlined,
+                                            size: 22,
+                                            color: AppColor.orange,
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   ),
-                                ),
-                              )
-                            ],
-                          )),
+                                )
+                              ],
+                            )),
+                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 16),
