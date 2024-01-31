@@ -1,16 +1,23 @@
-# evalutation_zens
+# Flutter Mobile Evaluation Test
 
-A new Flutter project.
+## Finished
+- Complete following the UI design in Figma.
+- Allow the following features:
+  + Add to cart.
+  + Add to favorites.
+  + Select toppings, size, accompanying options.
+  + Choose quantity
+ 
+## Demo Video 
+- Device : Iphone 14 pro
+- Flutter version 3.13.9
 
-## Getting Started
+https://github.com/iaohtdev/evalutation_zens/assets/95197224/6a1c05db-137c-44b6-8ff9-4093a947e92c
 
-This project is a starting point for a Flutter application.
+## Some packages used in the app
+- flutter_svg : Display svg images
+- dropdown_button2 : Display dropdown
+- build_runner,flutter_gen_runner : Code Generation
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Note
+ - Due to the inability to download img_prod images on Figma, I used some other images as replacements, however, still ensuring the user experience.
